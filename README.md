@@ -1,24 +1,15 @@
 # uuid-mcp
 
-A dead-simple MCP (Model Context Protocol) server that generates UUIDs for Claude Desktop.
-
-No UI.  
-No web server.  
-No nonsense.
+A minimal UUID utility server built for the Model Context Protocol (MCP). Generate UUIDs seamlessly through Claude Desktop and Claude Code.
 
 Claude talks to it over stdio, gets a UUID, done.
 
-## What this is (and what it isn’t)
+## Features
 
-- An MCP server Claude Desktop can run locally
-- Exposes a `generate_uuid` tool
-
-Not:
-- A library you import
-- A REST API
-- Useful outside MCP
-
-If you don’t know what MCP is, read the docs before complaining.
+- 🆔 Generate random UUIDs (v4)
+- 🔌 Easy integration with Claude Desktop and Claude Code
+- ⚡ Lightweight and fast
+- 🛠️ Built with TypeScript
 
 ## Installation
 
@@ -48,6 +39,47 @@ npx uuid-mcp
 
 Same behavior. Zero commitment.
 
+## Claude Code setup
+
+Claude Code does not auto-discover MCP servers. You must register it manually.
+
+### Install the Package
+You can use this package without installing it globally by using npx, or install it globally for faster access.
+
+```bash
+npm install -g @abhishekrj02/uuid-mcp
+```
+
+### Add to Claude Code
+
+For Windows Users
+```bash
+claude mcp add uuid-mcp -- cmd /c npx -y @abhishekrj02/uuid-mcp
+```
+
+For macOS/Linux Users
+```bash
+claude mcp add uuid-mcp -- npx -y @abhishekrj02/uuid-mcp
+```
+
+### Verify Installation
+```bash
+claude mcp list
+```
+
+### Use It
+Start a Claude Code session:
+```bash
+claude
+```
+
+Then simply ask Claude to generate a UUID:
+```bash
+Can you generate a UUID for me?
+```
+
+Claude will use the MCP server to generate a random UUID.
+
 ## Claude Desktop setup
 
 Claude Desktop does not auto-discover MCP servers. You must register it manually.
@@ -76,8 +108,6 @@ Add this:
 ```
 
 Restart Claude Desktop after saving.
-
-If Claude doesn’t restart the server, that’s on your config — not this package.
 
 ## Usage in Claude
 
