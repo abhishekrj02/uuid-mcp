@@ -45,7 +45,7 @@ server.registerTool(
         })
     },
     async (args: any) => {
-        const data = await callBackendAPI('/api/blast-radius', {
+        const data = await callBackendAPI('/api/mcp/blast-radius', {
             file_path: args.file_path,
             project_path: args.project_path,
         });
@@ -72,7 +72,7 @@ server.registerTool(
         })
     },
     async (args: any) => {
-        const data = await callBackendAPI('/api/dependencies', {
+        const data = await callBackendAPI('/api/mcp/dependencies', {
             file_path: args.file_path,
             project_path: args.project_path,
             depth: args.depth || 3,
@@ -100,7 +100,7 @@ server.registerTool(
         })
     },
     async (args: any) => {
-        const data = await callBackendAPI('/api/file-summary', {
+        const data = await callBackendAPI('/api/mcp/file-summary', {
             file_path: args.file_path,
             project_path: args.project_path,
         });
