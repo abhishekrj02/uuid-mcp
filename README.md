@@ -1,12 +1,9 @@
-# uuid-mcp
+# shift-lite-mcp
 
-A minimal UUID utility server built for the Model Context Protocol (MCP). Generate UUIDs seamlessly through Claude Desktop and Claude Code.
+A minimal utility server built for the Model Context Protocol (MCP).
 
-Claude talks to it over stdio, gets a UUID, done.
 
 ## Features
-
-- 🆔 Generate random UUIDs (v4)
 - 🔌 Easy integration with Claude Desktop and Claude Code
 - ⚡ Lightweight and fast
 - 🛠️ Built with TypeScript
@@ -16,17 +13,17 @@ Claude talks to it over stdio, gets a UUID, done.
 ### Option 1: Install globally (simple, persistent)
 
 ```bash
-npm install -g @abhishekrj02/uuid-mcp
+npm install -g @abhishekrj02/shift-lite-mcp
 ```
 
 Verify it works:
 ```bash
-uuid-mcp
+shift-lite-mcp
 ```
 
 You should see:
 ```bash
-UUID Generator MCP Server running on stdio
+Shift-lite MCP Server running on stdio
 ```
 
 
@@ -38,19 +35,19 @@ Claude Code does not auto-discover MCP servers. You must register it manually.
 You can use this package without installing it globally by using npx, or install it globally for faster access.
 
 ```bash
-npm install -g @abhishekrj02/uuid-mcp
+npm install -g @abhishekrj02/shift-lite-mcp
 ```
 
 ### Add to Claude Code
 
 For Windows Users
 ```bash
-claude mcp add uuid-mcp -- cmd /c npx -y @abhishekrj02/uuid-mcp
+claude mcp add shift-lite-mcp -- cmd /c npx -y @abhishekrj02/shift-lite-mcp
 ```
 
 For macOS/Linux Users
 ```bash
-claude mcp add uuid-mcp -- npx -y @abhishekrj02/uuid-mcp
+claude mcp add shift-lite-mcp -- npx -y @abhishekrj02/shift-lite-mcp
 ```
 
 ### Verify Installation
@@ -63,13 +60,6 @@ Start a Claude Code session:
 ```bash
 claude
 ```
-
-Then simply ask Claude to generate a UUID:
-```bash
-Can you generate a UUID for me?
-```
-
-Claude will use the MCP server to generate a random UUID.
 
 ## Claude Desktop setup
 
@@ -91,18 +81,14 @@ Add this:
 ```json
 {
   "mcpServers": {
-    "uuid": {
-      "command": "uuid-mcp"
+    "shift-lite-mcp": {
+      "command": "shift-lite-mcp"
     }
   }
 }
 ```
 
 Restart Claude Desktop after saving.
-
-### Example Usage
-Once configured, just ask Claude: *Generate a UUID*
-
 
 ## Development
 
